@@ -1,0 +1,26 @@
+{
+  "name": "playwright-2026",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "Prateek"
+  ],
+  "homepage": "https://github.com/prateek-sharma24/Playwright-2026#readme",
+  "bugs": {
+    "url": "https://github.com/prateek-sharma24/Playwright-2026/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateek-sharma24/Playwright-2026.git"
+  },
+  "license": "ISC",
+  "author": "Prateek",
+  "type": "commonjs",
+  "main": "06_chapter_if_else_statement_Condition.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}

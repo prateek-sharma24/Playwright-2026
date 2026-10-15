@@ -1,24 +1,12 @@
----
-name: push
-description: Review, commit, and push TypeScript project changes to GitHub
-argument-hint: Optional commit message
-agent: agent
----
+Before committing, inspect the entire Git working tree.
 
-Help me commit and push changes from my TypeScript project to GitHub.
-
-Follow these steps in order:
-
-1. Inspect the current Git branch, remote, and working tree using Git commands.
-2. Review the changed files and summarize what will be committed.
-3. Check for secrets, passwords, tokens, API keys, and other sensitive files. Do not stage or commit them.
-4. Check the project's Git status and avoid including unrelated changes.
-5. Run appropriate checks for the changes, if available.
-6. Prepare a concise commit message based on the actual changes. If I provided a commit message, use it.
-7. Show me the files to be committed and the proposed commit message. Ask for my confirmation before staging, committing, or pushing.
-8. After confirmation, stage only the intended files, create the commit, and push the current branch to its configured upstream.
-9. If no upstream exists, explain the issue and ask before configuring one.
-10. Never force-push, delete branches, discard changes, or overwrite remote history.
-11. If there are merge conflicts, authentication problems, or push failures, stop and explain how to resolve them.
-
-At the end, report the commit hash, branch, and push result. Never claim success unless the commands confirm it.
+1. Run `git status --short` to identify modified, deleted, and untracked files.
+2. Identify all intended project changes, not just the currently open file.
+3. Check `.gitignore` and ensure no required source files are accidentally excluded.
+4. Stage all intended changes in the repository using `git add -A` from the repository root.
+5. Run `git diff --cached --name-status` and show me every staged file.
+6. Compare the staged file list against the intended changes. If files are missing, investigate before continuing.
+7. Ask for confirmation before committing and pushing.
+8. After confirmation, commit the staged changes and push the current branch.
+9. Verify the commit contains all intended files using `git show --stat --oneline HEAD`.
+10. Never force-push or include secrets, credentials, or unrelated files.

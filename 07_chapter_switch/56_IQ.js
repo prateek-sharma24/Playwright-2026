@@ -1,0 +1,19 @@
+let testScore = 85;
+switch(true)
+{
+    case (testScore>=95):
+    console.log("top performer");
+    break;
+    case (testScore>=85):
+        console.log("Above expectations");
+        break;
+    case(testScore>=70):
+        console.log("Meets Expectations");
+        break;
+    case (testScore>=50):
+        console.log("Needs Improvement");
+        break;
+    default:
+        console.log("Requires trainning");
+
+}
