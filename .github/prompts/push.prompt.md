@@ -17,3 +17,5 @@ When I run `/push`, execute the workflow below. Do not treat invoking `/push` as
 10. After a successful push, verify with `git status --short --branch` and report the commit, published files, and push outcome. If the push is rejected or verification fails, report the error; do not hide it or resolve it by force-pushing.
 
 If I approve fixing a file, that approval is only for the fix. It is not approval to commit or push; always get separate approval for the final exact file list.
+
+For each `/push`, prepare a dated entry under a `Push History` section in `README.md` containing the intended commit summary and exact files to publish. Include `README.md` and show the proposed entry in the exact file list presented for approval in step 5. Only after approval, append the entry and stage it with the other approved paths so the history is part of the same commit. If publication is declined, do not add or retain the proposed entry. Never rewrite earlier history entries.
