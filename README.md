@@ -54,4 +54,7 @@ Some loop examples are designed to demonstrate loop behavior and may not termina
 
 ## Push History
 
+Each `/push` adds a dated entry describing the published changes and listing every file in the push. The commit description includes the same summary, a per-file or grouped description of all substantive changes, and the complete published file list.
+
 - 2026-10-17 — Add project README and document push history workflow; files: `README.md`, `.github/prompts/push.prompt.md`.
+- 2026-10-20 — Add array access and iteration examples; documents indexed access and mutation alongside loop-based and iterable array traversal; files: `README.md`, `12_chapter_Arrays/83_Access_Modifiers.js`, `12_chapter_Arrays/88_Iterate.js`.
