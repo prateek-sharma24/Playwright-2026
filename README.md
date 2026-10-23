@@ -58,3 +58,4 @@ Each `/push` adds a dated entry describing the published changes and listing eve
 
 - 2026-10-17 — Add project README and document push history workflow; files: `README.md`, `.github/prompts/push.prompt.md`.
 - 2026-10-20 — Add array access and iteration examples; documents indexed access and mutation alongside loop-based and iterable array traversal; files: `README.md`, `12_chapter_Arrays/83_Access_Modifiers.js`, `12_chapter_Arrays/88_Iterate.js`.
+- 2026-10-23 — Clean up reverse exercise; removes obsolete commented-out array reversal code; files: `Home_Work/11_Reverse.js`, `README.md`.
