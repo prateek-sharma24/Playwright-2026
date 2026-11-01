@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why changing b also changes a</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, sans-serif;
+      color: #172033;
+      background: #f3f6fb;
+    }
+
+    body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: clamp(1.25rem, 5vw, 2.5rem);
+      background: #fff;
+      border: 1px solid #dce4f0;
+      border-radius: 1rem;
+      box-shadow: 0 12px 32px #17203312;
+    }
+
+    h1, h2 { line-height: 1.2; }
+    h1 { margin-top: 0; }
+    .idea {
+      padding: 1rem;
+      background: #eaf3ff;
+      border-left: 4px solid #2878d0;
+      border-radius: 0.4rem;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 1rem;
+      color: #f4f7ff;
+      background: #172033;
+      border-radius: 0.6rem;
+    }
+
+    .diagram {
+      display: grid;
+      grid-template-columns: minmax(100px, 1fr) minmax(150px, 1.5fr) minmax(100px, 1fr);
+      align-items: center;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .variables {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .variable, .object {
+      padding: 0.8rem;
+      border: 2px solid #a9bedb;
+      border-radius: 0.65rem;
+      background: #f8fbff;
+    }
+
+    .object {
+      border-color: #e3b94f;
+      background: #fff8df;
+    }
+
+    .arrow {
+      color: #2878d0;
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+
+    .result {
+      padding: 0.8rem 1rem;
+      background: #eaf8ef;
+      border-radius: 0.6rem;
+    }
+
+    @media (max-width: 480px) {
+      .diagram {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+
+      .variables {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Why does changing <code>b</code> also change <code>a</code>?</h1>
+    <p class="idea">
+      <strong>Big idea:</strong> <code>a</code> and <code>b</code> are two labels
+      pointing to the same object. They are not two separate objects.
+    </p>
+
+    <h2>The code</h2>
+    <pre><code>let a = { status: "pass" };
+let b = a; // copy the reference
+b.status = "fail";
+console.log(a.status);</code></pre>
+
+    <h2>Picture it like two name tags on one toy box</h2>
+    <div class="diagram" role="img" aria-label="The variables a and b both point to the same object, whose status is fail">
+      <div class="variables">
+        <div class="variable"><strong>a</strong><br>“this box”</div>
+        <div class="variable"><strong>b</strong><br>“this box too”</div>
+      </div>
+      <div class="arrow" aria-hidden="true">⟶</div>
+      <div class="object"><strong>One shared object</strong><br>status: <code>"fail"</code></div>
+    </div>
+
+    <ol>
+      <li><code>a</code> gets a new object with <code>status: "pass"</code>.</li>
+      <li><code>b = a</code> copies the object's address, like copying its location—not making another box.</li>
+      <li><code>b.status = "fail"</code> changes the shared object.</li>
+      <li>Looking through <code>a</code> finds that same changed object.</li>
+    </ol>
+
+    <p class="result"><strong>Output:</strong> <code>fail</code></p>
+    <p>
+      To make a separate, shallow copy of this simple object, you could write
+      <code>let b = { ...a };</code>. Then changing <code>b.status</code> would
+      not change <code>a.status</code>.
+    </p>
+  </main>
+</body>
+</html>
