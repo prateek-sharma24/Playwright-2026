@@ -1,6 +1,6 @@
 # Playwright-2026
 
-A collection of beginner JavaScript lessons and practice exercises. The repository is organized by lesson topic and uses small, standalone Node.js scripts rather than a single application.
+A collection of beginner JavaScript and TypeScript lessons and practice exercises. The repository is organized by lesson topic and uses small, standalone scripts rather than a single application.
 
 ## Requirements
 
@@ -26,6 +26,22 @@ node Home_Work/04_FizzBuzz.js
 ```
 
 Interactive scripts prompt for input in the terminal. Run one exercise at a time; these files are independent examples, not a single program.
+
+## TypeScript lessons
+
+The TypeScript examples are in `30_chapter_Typescript/` and `31_chapter_Typescript/`. Install the TypeScript compiler if it is not already available:
+
+```sh
+npm install --save-dev typescript
+```
+
+To type-check an individual example without generating or overwriting a JavaScript file, run:
+
+```sh
+npx tsc --ignoreConfig --noEmit 31_chapter_Typescript\218.ts
+```
+
+`--ignoreConfig` is needed when passing a file directly to TypeScript 7 while a `tsconfig.json` is present in the repository.
 
 ## Repository layout
 
@@ -119,6 +135,10 @@ The links below cover every standalone JavaScript exercise in the repository, in
 
 [129_String.js](./16_chapter_String/129_String.js), [130_String_Fn.js](./16_chapter_String/130_String_Fn.js), [131_String_Search.js](./16_chapter_String/131_String_Search.js)
 
+### TypeScript lessons
+
+[213.ts](./30_chapter_Typescript/213.ts), [214.ts](./31_chapter_Typescript/214.ts), [215_Basic.ts](./31_chapter_Typescript/215_Basic.ts), [216_Fn.ts](./31_chapter_Typescript/216_Fn.ts), [217.ts](./31_chapter_Typescript/217.ts), [218.ts](./31_chapter_Typescript/218.ts)
+
 ### Homework
 
 [01_Hello_World.js](./Home_Work/01_Hello_World.js), [02_User_Ip.js](./Home_Work/02_User_Ip.js), [03_Table.js](./Home_Work/03_Table.js), [04_FizzBuzz.js](./Home_Work/04_FizzBuzz.js), [05_Grade_Calculator.js](./Home_Work/05_Grade_Calculator.js), [06_Leap_Year.js](./Home_Work/06_Leap_Year.js), [07_Triangle.js](./Home_Work/07_Triangle.js), [08_Array_max.js](./Home_Work/08_Array_max.js), [09_Array_frequency.js](./Home_Work/09_Array_frequency.js), [10_Find_duplicate.js](./Home_Work/10_Find_duplicate.js), [11_Reverse.js](./Home_Work/11_Reverse.js), [12_Smallest.js](./Home_Work/12_Smallest.js), [13_Swap.js](./Home_Work/13_Swap.js)
@@ -137,3 +157,4 @@ Each `/push` adds a dated entry describing the published changes and listing eve
 - 2026-10-20 — Add array access and iteration examples; documents indexed access and mutation alongside loop-based and iterable array traversal; files: `README.md`, `12_chapter_Arrays/83_Access_Modifiers.js`, `12_chapter_Arrays/88_Iterate.js`.
 - 2026-10-23 — Clean up reverse exercise; removes obsolete commented-out array reversal code; files: `Home_Work/11_Reverse.js`, `README.md`.
 - 2026-11-01 — Add object lessons and learning references; adds object examples and learning notes, ignores generated/local files, and stops tracking installed dependencies; files: `README.md`, `.gitignore`, `00_chapter_learning/133_Object_Copy_Explained.html`, `00_chapter_learning/chatAt_vs_At_string.md`, `00_chapter_learning/object_reference_copy_eli5.html`, `00_chapter_learning/rarely_needed_string_methods.md`, `17_chapter_Objects/132_Objects.js`, `17_chapter_Objects/133_Object_Copy.js`, `17_chapter_Objects/134.js`, `17_chapter_Objects/135.js`, `17_chapter_Objects/136_Normal.js`, `17_chapter_Objects/137_Config.js`, `17_chapter_Objects/138_Call_by_refer_by_value.js`, `17_chapter_Objects/139_Shallow_copy_vs_Deep_copy.js`, `node_modules/.package-lock.json`, `node_modules/ansi-regex/index.js`, `node_modules/ansi-regex/license`, `node_modules/ansi-regex/package.json`, `node_modules/ansi-regex/readme.md`, `node_modules/prompt-sync/LICENSE`, `node_modules/prompt-sync/README.md`, `node_modules/prompt-sync/index.js`, `node_modules/prompt-sync/package.json`, `node_modules/prompt-sync/test.js`, `node_modules/strip-ansi/index.d.ts`, `node_modules/strip-ansi/index.js`, `node_modules/strip-ansi/license`, `node_modules/strip-ansi/package.json`, `node_modules/strip-ansi/readme.md`.
+- 2026-11-19 — Document TypeScript lesson files and standalone type-checking; adds the TypeScript chapter index and compiler setup guidance; files: `README.md`.
