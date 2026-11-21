@@ -1,0 +1,1 @@
+//not possible as Normal classes, mainly in javascript
